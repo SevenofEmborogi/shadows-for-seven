@@ -14,12 +14,12 @@ body {
 
 .archive-page {
   min-height: 100vh;
+  padding: 5rem 7vw 3rem;
   position: relative;
-  overflow: hidden;
-  padding: 6rem 7vw 3rem;
+  overflow-x: hidden;
   background:
-    linear-gradient(rgba(3,2,1,.45), rgba(3,2,1,.88)),
-    radial-gradient(circle at 50% 15%, rgba(161,112,48,.28), transparent 35%),
+    linear-gradient(rgba(3,2,1,.48), rgba(3,2,1,.92)),
+    radial-gradient(circle at 50% 12%, rgba(191,132,60,.28), transparent 34%),
     linear-gradient(90deg, #080504, #18100a 48%, #050303);
 }
 
@@ -28,19 +28,9 @@ body {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(0,0,0,.88), transparent 20%, transparent 80%, rgba(0,0,0,.88)),
-    repeating-linear-gradient(90deg, rgba(80,45,20,.24) 0 3px, transparent 3px 90px);
-  opacity: .45;
-  pointer-events: none;
-}
-
-.archive-page::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 18% 12%, rgba(245,210,140,.16), transparent 18%),
-    radial-gradient(circle at 80% 18%, rgba(115,70,180,.14), transparent 25%);
+    linear-gradient(90deg, rgba(0,0,0,.86), transparent 22%, transparent 78%, rgba(0,0,0,.86)),
+    repeating-linear-gradient(90deg, rgba(85,47,22,.25) 0 3px, transparent 3px 92px);
+  opacity: .5;
   pointer-events: none;
 }
 
@@ -48,91 +38,92 @@ body {
   position: fixed;
   inset: 0;
   pointer-events: none;
+  z-index: 1;
+  opacity: .35;
   background-image:
     radial-gradient(circle, rgba(240,210,150,.35) 1px, transparent 2px),
-    radial-gradient(circle, rgba(255,255,255,.18) 1px, transparent 2px);
+    radial-gradient(circle, rgba(255,255,255,.16) 1px, transparent 2px);
   background-size: 150px 150px, 230px 230px;
   animation: dustFloat 22s linear infinite;
-  opacity: .42;
-  z-index: 1;
 }
 
 .archive-hero,
-.library-table,
+.book-grid,
 footer {
   position: relative;
-  z-index: 3;
+  z-index: 2;
 }
 
 .archive-hero {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
 }
 
 .eyebrow {
   font-family: "Cinzel", serif;
   color: #c49a50;
   text-transform: uppercase;
-  letter-spacing: .5em;
+  letter-spacing: .45em;
   font-size: .78rem;
   margin-bottom: 1rem;
 }
 
 h1 {
   font-family: "Cinzel", serif;
-  font-size: clamp(3.4rem, 9vw, 8rem);
+  font-size: clamp(3rem, 8vw, 7rem);
   line-height: .9;
   text-transform: uppercase;
   color: #f4ead8;
-  text-shadow: 0 0 35px rgba(0,0,0,.9);
+  text-shadow: 0 0 35px rgba(0,0,0,.95);
 }
 
 .quote {
-  margin-top: 1.5rem;
+  margin-top: 1.4rem;
   color: #d7c5a3;
   font-size: clamp(1.2rem, 2vw, 1.6rem);
   font-style: italic;
 }
 
-.library-table {
-  max-width: 1100px;
+.book-grid {
+  max-width: 1120px;
   margin: 0 auto;
   padding: 2rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.4rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
   background:
-    linear-gradient(135deg, rgba(70,38,18,.88), rgba(24,13,7,.92));
-  border: 1px solid rgba(196,154,80,.35);
+    linear-gradient(135deg, rgba(64,34,16,.94), rgba(18,10,5,.96));
+  border: 1px solid rgba(196,154,80,.38);
   box-shadow:
     0 35px 90px rgba(0,0,0,.75),
-    inset 0 0 50px rgba(255,220,150,.05);
+    inset 0 0 60px rgba(255,220,150,.05);
 }
 
 .book {
-  min-height: 180px;
-  padding: 1.5rem;
+  min-height: 190px;
+  padding: 1.6rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  color: #f3ead8;
   text-decoration: none;
-  border: 1px solid rgba(212,170,90,.38);
+  color: #f3ead8;
+  border: 1px solid rgba(212,170,90,.42);
   background:
-    linear-gradient(90deg, rgba(55,22,16,.98), rgba(115,60,28,.78)),
-    repeating-linear-gradient(90deg, transparent 0 18px, rgba(0,0,0,.2) 18px 20px);
+    linear-gradient(90deg, rgba(32,12,9,.98), rgba(108,55,26,.86)),
+    repeating-linear-gradient(90deg, transparent 0 18px, rgba(0,0,0,.18) 18px 21px);
   box-shadow:
-    inset 12px 0 18px rgba(0,0,0,.38),
+    inset 14px 0 20px rgba(0,0,0,.42),
+    inset -8px 0 14px rgba(255,210,130,.04),
     0 14px 35px rgba(0,0,0,.55);
   transition: .3s ease;
 }
 
 .book:hover {
   transform: translateY(-8px) rotate(-1deg);
-  border-color: rgba(220,180,100,.85);
+  border-color: rgba(220,180,100,.9);
   box-shadow:
-    0 0 35px rgba(196,140,60,.28),
-    0 20px 45px rgba(0,0,0,.7);
+    0 0 35px rgba(196,140,60,.3),
+    0 22px 48px rgba(0,0,0,.72);
 }
 
 .book span {
@@ -144,9 +135,9 @@ h1 {
 }
 
 .book small {
-  margin-top: .65rem;
+  margin-top: .7rem;
   color: #d7c8b2;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
 footer {
@@ -172,15 +163,20 @@ footer p {
 
 @media (max-width: 850px) {
   .archive-page {
-    padding: 4rem 1.2rem 2rem;
+    padding: 3.5rem 1.1rem 2rem;
   }
 
-  .library-table {
+  .eyebrow {
+    font-size: .65rem;
+    letter-spacing: .32em;
+  }
+
+  .book-grid {
     grid-template-columns: 1fr;
     padding: 1rem;
   }
 
   .book {
-    min-height: 135px;
+    min-height: 145px;
   }
 }
