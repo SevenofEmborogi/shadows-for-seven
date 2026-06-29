@@ -85,17 +85,16 @@ body {
 .book-hotspots {
   position: absolute;
   z-index: 10;
-  left: 5%;
-  right: 5%;
-  bottom: 19%;
-  height: 30%;
+  left: 0;
+  right: 0;
+  bottom: 20%;
+  height: 29%;
 }
 
 .hotspot {
   position: absolute;
   top: 0;
   height: 100%;
-  width: 12%;
   text-decoration: none;
   border-radius: 8px;
   background: transparent;
@@ -112,13 +111,13 @@ body {
   transform: translateY(-8px);
 }
 
-.book-1 { left: 0%; }
-.book-2 { left: 16.7%; }
-.book-3 { left: 33.4%; }
-.book-4 { left: 50.1%; }
-.book-5 { left: 66.8%; }
-.book-6 { left: 83.5%; }
-
+/* Individual desktop book hit boxes */
+.book-1 { left: 13.5%; width: 11.5%; }
+.book-2 { left: 27.1%; width: 11.6%; }
+.book-3 { left: 40.6%; width: 11.7%; }
+.book-4 { left: 54.0%; width: 11.6%; }
+.book-5 { left: 67.7%; width: 11.8%; }
+.book-6 { left: 81.2%; width: 11.8%; }
 .archive-footer {
   position: absolute;
   z-index: 4;
