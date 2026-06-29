@@ -4,133 +4,120 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shadows for Seven | Official World Archive</title>
-  <meta name="description" content="The official world archive for Shadows for Seven, a dark fantasy novel by Christian P." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="veil"></div>
-  <div class="embers" aria-hidden="true"></div>
+  <div class="embers"></div>
 
-  <main class="landing" id="top">
-    <section class="gate" aria-labelledby="site-title">
-      <div class="emblem" aria-hidden="true">
-        <svg viewBox="0 0 220 220" role="img">
-          <defs>
-            <radialGradient id="eclipseGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#d8c28a" stop-opacity="0.35"/>
-              <stop offset="65%" stop-color="#9b7b3e" stop-opacity="0.08"/>
-              <stop offset="100%" stop-color="#000" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-          <circle cx="110" cy="110" r="90" fill="url(#eclipseGlow)"/>
-          <circle cx="110" cy="110" r="54" fill="none" stroke="#c9a85d" stroke-width="2" opacity=".75"/>
-          <path d="M68 118 C92 67, 138 67, 158 117 C132 101, 94 101, 68 118Z" fill="#0c0c0c" stroke="#c9a85d" stroke-width="2"/>
-          <path d="M72 125 C103 138, 124 137, 153 125 C140 153, 93 157, 72 125Z" fill="#161111" stroke="#7d1e1e" stroke-width="2" opacity=".95"/>
-          <path d="M110 63 C99 84, 99 105, 110 126 C121 105, 121 84, 110 63Z" fill="#d8d3c5" opacity=".9"/>
-          <path d="M82 92 C97 85, 123 84, 138 92" fill="none" stroke="#0a0a0a" stroke-width="8" stroke-linecap="round"/>
-          <path d="M63 154 C88 149, 98 136, 110 122 C122 136, 132 149, 157 154 C139 168, 81 168, 63 154Z" fill="#070707" stroke="#c9a85d" stroke-width="1.5" opacity=".88"/>
-          <g stroke="#c9a85d" stroke-width="1.5" opacity=".75">
-            <path d="M82 155 L76 178"/><path d="M94 159 L91 184"/><path d="M106 161 L106 188"/><path d="M118 161 L120 184"/><path d="M130 159 L136 181"/><path d="M142 155 L151 174"/><path d="M70 148 L55 162"/>
-          </g>
-        </svg>
-      </div>
-
-      <p class="kicker">The Official World Archive</p>
-      <h1 id="site-title"><span>Shadows</span><small>for</small><span>Seven</span></h1>
-      <blockquote>“The world remembers only the victors. The shadows remember everything.”</blockquote>
-      <a class="enter-button" href="#archive">Enter Emborogi</a>
-      <p class="credit">A dark fantasy novel by Christian P.</p>
-    </section>
-  </main>
-
-  <header class="site-header" id="archive">
-    <a class="brand" href="#top" aria-label="Shadows for Seven home">
-      <span class="brand-mark">VII</span>
-      <span>Shadows for Seven</span>
-    </a>
+  <header class="top-nav">
+    <a class="sigil" href="#top">VII</a>
     <nav>
       <a href="#chronicle">The Chronicle</a>
+      <a href="#seven">Seven</a>
       <a href="#characters">Characters</a>
-      <a href="#realm">The Realm</a>
-      <a href="#archives">Archives</a>
+      <a href="#world">Emborogi</a>
+      <a href="#archive">Archive</a>
       <a href="#author">Author</a>
     </nav>
   </header>
 
-  <section class="section intro" id="chronicle">
-    <div>
-      <p class="eyebrow">The Chronicle</p>
-      <h2>A boy born of shadow. A broken man carrying a name the world remembers. A fairy who finds trouble before trouble finds her.</h2>
-    </div>
-    <p>
-      <em>Shadows for Seven</em> follows Seven from the shadowed lands of Helimani into the blinding realm of Emborogi, where old bloodlines, hidden cabals, and a shattered past begin circling the same impossible truth. This archive will grow with the novel: characters, lore, locations, timelines, and fragments from the world behind the story.
-    </p>
-  </section>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-shadow"></div>
 
-  <section class="section cards-section" id="characters">
-    <p class="eyebrow">Those Who Walk the Shadows</p>
-    <h2>Characters</h2>
-    <div class="card-grid">
-      <article class="tome-card">
-        <span>01</span>
-        <h3>Seven</h3>
+      <div class="hero-content">
+        <p class="eyebrow">The Official World Archive</p>
+        <h1>
+          <span>Shadows</span>
+          <small>for</small>
+          <span>Seven</span>
+        </h1>
+        <p class="tagline">The boy the light forgot.</p>
+        <p class="quote">“The world remembers only the victors. The shadows remember everything.”</p>
+        <a class="enter-btn" href="#chronicle">Enter Emborogi</a>
+      </div>
+    </section>
+
+    <section id="chronicle" class="section split">
+      <div>
+        <p class="eyebrow">The Chronicle</p>
+        <h2>A boy born of shadow. A broken man carrying a name the world remembers. A fairy who finds trouble before trouble finds her.</h2>
+      </div>
+      <p>
+        <em>Shadows for Seven</em> follows Seven from the shadowed lands of Helimani into the blinding realm of Emborogi, where old bloodlines, hidden cabals, and a shattered past begin circling the same impossible truth.
+      </p>
+    </section>
+
+    <section id="seven" class="section seven-section">
+      <div class="portrait-card">
+        <div class="blindfold"></div>
+        <h2>Seven</h2>
         <p>A blindfolded child of shadow, marked by survival, restraint, and a hunger for justice he refuses to call revenge.</p>
-      </article>
-      <article class="tome-card">
-        <span>02</span>
-        <h3>Aleister Bloodstone</h3>
-        <p>A half-orc carrying the weight of a famous name, a ruined past, and the kind of regret that learns to speak softly.</p>
-      </article>
-      <article class="tome-card">
-        <span>03</span>
-        <h3>Muffin</h3>
-        <p>A one-foot storm with wings. She hears rumors, finds bounties, and follows danger with inconvenient accuracy.</p>
-      </article>
-      <article class="tome-card">
-        <span>04</span>
-        <h3>The Bladestorm Cabal</h3>
-        <p>The hands behind old bloodshed, led by Grimgor Ironjaw, and tied to secrets that should have stayed buried.</p>
-      </article>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <section class="section split" id="realm">
-    <div class="map-placeholder">
-      <div class="moon"></div>
-      <p>Map of Emborogi<br><small>coming soon</small></p>
-    </div>
-    <div>
+    <section id="characters" class="section">
+      <p class="eyebrow">Those Who Walk the Shadows</p>
+      <h2>Characters</h2>
+
+      <div class="card-grid">
+        <article>
+          <span>01</span>
+          <h3>Seven</h3>
+          <p>A shadow with a name.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Aleister Bloodstone</h3>
+          <p>The man of regret.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Muffin</h3>
+          <p>Small, but not harmless.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>The Cabal</h3>
+          <p>Blood. Secrets. Power.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="world" class="section world">
       <p class="eyebrow">The Realm of Emborogi</p>
       <h2>Light has borders. Shadow remembers the paths between them.</h2>
-      <p>Future entries will open the roads between Helimani, Emborogi, Dawnhausen, the Bloodstone estate, hidden shrines, ruined crossings, and the places powerful people pretend no longer exist.</p>
-    </div>
-  </section>
+      <p>
+        Future entries will open the roads between Helimani, Emborogi, Dawnhausen, the Bloodstone estate, ruined crossings, hidden shrines, and the places powerful people pretend no longer exist.
+      </p>
+    </section>
 
-  <section class="section cards-section" id="archives">
-    <p class="eyebrow">The Archives</p>
-    <h2>Lore to be unearthed</h2>
-    <div class="archive-list">
-      <a href="#">Balance Keepers</a>
-      <a href="#">The Bloodstones</a>
-      <a href="#">Shadowborn</a>
-      <a href="#">The Cabal</a>
-      <a href="#">Relics</a>
-      <a href="#">Timeline</a>
-    </div>
-  </section>
+    <section id="archive" class="section">
+      <p class="eyebrow">The Archives</p>
+      <h2>Lore to be unearthed</h2>
 
-  <section class="section author" id="author">
-    <p class="eyebrow">Author</p>
-    <h2>Christian P.</h2>
-    <p>Creator of <em>Shadows for Seven</em>. This archive is being built alongside the novel and will expand as the world reveals itself: chapter by chapter, secret by secret, shadow by shadow.</p>
-  </section>
+      <div class="archive-links">
+        <a href="#">Balance Keepers</a>
+        <a href="#">The Bloodstones</a>
+        <a href="#">Shadowborn</a>
+        <a href="#">The Cabal</a>
+        <a href="#">Relics</a>
+        <a href="#">Timeline</a>
+      </div>
+    </section>
 
-  <footer class="site-footer">
-    <p><strong>Shadows for Seven</strong> · Official World Archive</p>
-    <p>© Christian P. All rights reserved.</p>
+    <section id="author" class="section author">
+      <p class="eyebrow">Author</p>
+      <h2>Christian P.</h2>
+      <p>
+        Creator of <em>Shadows for Seven</em>, a dark fantasy story about grief, loyalty, revenge, memory, and the things that survive after the light looks away.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>“Stories end. Shadows don’t.”</p>
+    <p>© Christian P.</p>
   </footer>
 
   <script src="script.js"></script>
