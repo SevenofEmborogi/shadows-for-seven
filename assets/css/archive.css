@@ -21,30 +21,30 @@ body {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  background:
-    url("../images/archive-library.png") center center / cover no-repeat;
+  background: url("../images/archive-library.png") center center / cover no-repeat;
 }
 
-.archive-darkness {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,.28), rgba(0,0,0,.72)),
-    radial-gradient(circle at center, transparent 35%, rgba(0,0,0,.75) 100%);
-  z-index: 1;
-  pointer-events: none;
-}
-
+.archive-darkness,
 .archive-dust {
   position: absolute;
   inset: 0;
-  z-index: 2;
   pointer-events: none;
+}
+
+.archive-darkness {
+  z-index: 1;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.18), rgba(0,0,0,.58)),
+    radial-gradient(circle at center, transparent 35%, rgba(0,0,0,.7) 100%);
+}
+
+.archive-dust {
+  z-index: 2;
+  opacity: .25;
   background-image:
     radial-gradient(circle, rgba(255,220,160,.35) 1px, transparent 2px),
     radial-gradient(circle, rgba(255,255,255,.14) 1px, transparent 2px);
   background-size: 180px 180px, 260px 260px;
-  opacity: .35;
   animation: dustFloat 24s linear infinite;
 }
 
@@ -52,7 +52,7 @@ body {
   position: relative;
   z-index: 3;
   text-align: center;
-  padding-top: 3.5rem;
+  padding-top: 3rem;
 }
 
 .archive-title p {
@@ -68,7 +68,7 @@ body {
   text-transform: uppercase;
   font-size: clamp(3rem, 7vw, 6.6rem);
   line-height: .9;
-  margin: 1rem 0;
+  margin: .8rem 0;
   color: #f3ead8;
   text-shadow: 0 4px 18px #000;
 }
@@ -81,12 +81,13 @@ body {
   text-shadow: 0 3px 12px #000;
 }
 
+/* DESKTOP CLICK ZONES OVER REAL BOOKS */
 .book-hotspots {
   position: absolute;
-  z-index: 5;
-  left: 8%;
-  right: 8%;
-  bottom: 18%;
+  z-index: 10;
+  left: 5%;
+  right: 5%;
+  bottom: 19%;
   height: 30%;
 }
 
@@ -94,51 +95,36 @@ body {
   position: absolute;
   top: 0;
   height: 100%;
-  width: 13%;
+  width: 13.5%;
   text-decoration: none;
   border-radius: 8px;
-  transition: .3s ease;
+  background: transparent;
+  transition: .25s ease;
 }
 
 .hotspot span {
-  position: absolute;
-  left: 50%;
-  bottom: -2.4rem;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  font-family: "Cinzel", serif;
-  color: #f0d083;
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  font-size: .72rem;
-  opacity: 0;
-  text-shadow: 0 3px 10px #000;
-  transition: .3s ease;
+  display: none;
 }
 
 .hotspot:hover {
   background: rgba(255, 210, 120, .08);
   box-shadow: 0 0 45px rgba(255, 185, 80, .25);
-  transform: translateY(-10px);
-}
-
-.hotspot:hover span {
-  opacity: 1;
+  transform: translateY(-8px);
 }
 
 .book-1 { left: 0%; }
-.book-2 { left: 17%; }
-.book-3 { left: 34%; }
-.book-4 { left: 51%; }
-.book-5 { left: 68%; }
-.book-6 { left: 85%; }
+.book-2 { left: 16.7%; }
+.book-3 { left: 33.4%; }
+.book-4 { left: 50.1%; }
+.book-5 { left: 66.8%; }
+.book-6 { left: 83.5%; }
 
 .archive-footer {
   position: absolute;
   z-index: 4;
   left: 0;
   right: 0;
-  bottom: 3rem;
+  bottom: 2.2rem;
   text-align: center;
 }
 
@@ -151,28 +137,24 @@ body {
 }
 
 .archive-footer p {
-  margin-top: .8rem;
+  margin-top: .6rem;
   color: #ccb89b;
   font-style: italic;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 }
 
 @keyframes dustFloat {
-  from {
-    background-position: 0 0, 40px 80px;
-  }
-  to {
-    background-position: 140px -320px, -110px -380px;
-  }
+  from { background-position: 0 0, 40px 80px; }
+  to { background-position: 140px -320px, -110px -380px; }
 }
 
-/* Mobile Archive */
+/* MOBILE VERSION */
 @media (max-width: 700px) {
   .archive-room {
     min-height: 100vh;
     overflow-y: auto;
     background:
-      linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.9)),
+      linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.92)),
       url("../images/archive-library.png") center top / cover no-repeat;
   }
 
@@ -187,7 +169,6 @@ body {
 
   .archive-title h1 {
     font-size: 3rem;
-    line-height: .9;
   }
 
   .archive-title span {
@@ -214,15 +195,13 @@ body {
     width: 100%;
     height: 118px;
     border-radius: 6px;
-    border: 1px solid rgba(226, 182, 95, .72);
+    border: 1px solid rgba(226,182,95,.72);
     background:
-      radial-gradient(circle at 80% 25%, rgba(255, 210, 125, .13), transparent 28%),
+      radial-gradient(circle at 80% 25%, rgba(255,210,125,.13), transparent 28%),
       linear-gradient(90deg, #160706, #3a120d 22%, #74351c 58%, #240b07);
     box-shadow:
       inset 16px 0 20px rgba(0,0,0,.55),
-      inset -10px 0 16px rgba(255,215,145,.05),
       0 18px 38px rgba(0,0,0,.72);
-    overflow: hidden;
   }
 
   .hotspot::before {
@@ -233,62 +212,31 @@ body {
     left: 18px;
     width: 7px;
     background: linear-gradient(#d8b667, #6e431e, #d8b667);
-    opacity: .85;
   }
 
   .hotspot::after {
     content: "";
     position: absolute;
     inset: 13px;
-    border: 1px solid rgba(235, 190, 105, .42);
-    pointer-events: none;
+    border: 1px solid rgba(235,190,105,.42);
   }
 
   .hotspot span {
-    opacity: 1;
+    display: block;
     position: absolute;
     left: 3.2rem;
     top: 50%;
-    bottom: auto;
     transform: translateY(-50%);
+    font-family: "Cinzel", serif;
+    color: #f0d083;
+    text-transform: uppercase;
+    letter-spacing: .12em;
     font-size: 1rem;
-    white-space: normal;
-    text-align: left;
   }
 
   .archive-footer {
     position: relative;
     bottom: auto;
     padding: 0 1rem 2rem;
-  }
-}
-
-  .hotspot {
-    position: relative;
-    top: auto;
-    left: auto !important;
-    width: 100%;
-    height: 95px;
-    border: 1px solid rgba(222, 176, 92, .55);
-    background:
-      linear-gradient(90deg, #190706, #542017, #8c4724, #2a0d08);
-    box-shadow:
-      inset 14px 0 20px rgba(0,0,0,.48),
-      0 16px 32px rgba(0,0,0,.6);
-  }
-
-  .hotspot span {
-    opacity: 1;
-    bottom: auto;
-    top: 50%;
-    left: 2rem;
-    transform: translateY(-50%);
-    font-size: 1rem;
-  }
-
-  .archive-footer {
-    position: relative;
-    bottom: auto;
-    padding-bottom: 2rem;
   }
 }
