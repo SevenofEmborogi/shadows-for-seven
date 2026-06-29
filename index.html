@@ -12,7 +12,7 @@
 <section class="hero">
   <div class="ash"></div>
   <div class="fog"></div>
-
+<div class="embers"></div>
   <div class="overlay">
     <p class="archive">THE OFFICIAL WORLD ARCHIVE</p>
 
@@ -31,15 +31,20 @@
   </div>
 </section>
 
+<script src="assets/js/script.js"></script>
+
 <script>
-  document.querySelector(".enter").addEventListener("click", function(e) {
+document.querySelector(".enter").addEventListener("click", function(e) {
     e.preventDefault();
     document.body.classList.add("fade-out");
+
     setTimeout(() => {
-      window.location.href = this.href;
+        window.location.href = this.href;
     }, 700);
-  });
+});
 </script>
+
+</body>
 
 </body>
 </html>
