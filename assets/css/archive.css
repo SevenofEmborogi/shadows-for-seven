@@ -89,6 +89,7 @@ body {
   right: 0;
   bottom: 20%;
   height: 29%;
+ 
 }
 
 .hotspot {
@@ -118,6 +119,11 @@ body {
 .book-4 { left: 54.0%; width: 11.6%; }
 .book-5 { left: 67.7%; width: 11.8%; }
 .book-6 { left: 81.2%; width: 11.8%; }
+
+.book-muffin {
+  display: none;
+}
+
 .archive-footer {
   position: absolute;
   z-index: 4;
