@@ -412,3 +412,17 @@ footer {
     0 0 30px rgba(124, 68, 255, 0.85),
     0 0 90px rgba(124, 68, 255, 0.45);
 }
+@media (max-width: 768px) {
+  .poster-landing {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: #000;
+    min-height: 100dvh;
+  }
+
+  .landing-page {
+    overflow: hidden;
+    background: #000;
+  }
+}
