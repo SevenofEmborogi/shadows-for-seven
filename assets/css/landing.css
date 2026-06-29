@@ -179,3 +179,86 @@ h1 {
     letter-spacing: 3px;
   }
 }
+/* Floating embers and shadow fog */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255, 150, 60, 0.9) 0 2px, transparent 3px),
+    radial-gradient(circle, rgba(160, 80, 255, 0.85) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgba(255, 220, 150, 0.7) 0 1px, transparent 2px);
+  background-size:
+    220px 220px,
+    310px 310px,
+    170px 170px;
+  animation: emberDrift 18s linear infinite;
+  opacity: 0.55;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: -18%;
+  height: 42%;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 65%, rgba(115, 55, 190, 0.42), transparent 36%),
+    radial-gradient(circle at 50% 75%, rgba(0, 0, 0, 0.95), transparent 48%),
+    radial-gradient(circle at 80% 65%, rgba(115, 55, 190, 0.34), transparent 38%);
+  filter: blur(24px);
+  animation: fogCrawl 12s ease-in-out infinite alternate;
+}
+
+.overlay {
+  position: relative;
+  z-index: 5;
+}
+
+.enter {
+  animation: ravenPulse 4s ease-in-out infinite;
+}
+
+@keyframes emberDrift {
+  from {
+    background-position:
+      0 0,
+      80px 40px,
+      20px 120px;
+  }
+
+  to {
+    background-position:
+      260px -340px,
+      -180px -420px,
+      160px -260px;
+  }
+}
+
+@keyframes fogCrawl {
+  from {
+    transform: translateX(-2%) scale(1);
+    opacity: 0.65;
+  }
+
+  to {
+    transform: translateX(3%) scale(1.08);
+    opacity: 0.95;
+  }
+}
+
+@keyframes ravenPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(124, 92, 255, 0.38);
+  }
+
+  50% {
+    box-shadow: 0 0 38px rgba(124, 92, 255, 0.78);
+  }
+}
