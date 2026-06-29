@@ -363,3 +363,52 @@ footer {
     padding: 80px 24px;
   }
 }
+.landing-page {
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.poster-landing {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("hero-seven.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.poster-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, transparent 45%, rgba(0,0,0,0.4) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.45));
+  pointer-events: none;
+}
+
+.enter-emborogi {
+  position: absolute;
+  left: 50%;
+  bottom: 12%;
+  transform: translateX(-50%);
+  padding: 18px 48px;
+  border: 1px solid rgba(210, 185, 130, 0.9);
+  background: rgba(12, 6, 20, 0.72);
+  color: #f4ead8;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  box-shadow:
+    0 0 20px rgba(124, 68, 255, 0.55),
+    0 0 60px rgba(124, 68, 255, 0.25);
+}
+
+.enter-emborogi:hover {
+  color: #d8bd72;
+  box-shadow:
+    0 0 30px rgba(124, 68, 255, 0.85),
+    0 0 90px rgba(124, 68, 255, 0.45);
+}
