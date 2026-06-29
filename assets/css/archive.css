@@ -166,16 +166,34 @@ body {
   }
 }
 
-/* Mobile fallback */
+/* Mobile Archive */
 @media (max-width: 700px) {
   .archive-room {
     min-height: 100vh;
     overflow-y: auto;
-    background-position: center top;
+    background:
+      linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.9)),
+      url("../images/archive-library.png") center top / cover no-repeat;
   }
 
   .archive-title {
-    padding: 2.5rem 1.2rem 1rem;
+    padding: 2.2rem 1rem 1rem;
+  }
+
+  .archive-title p {
+    font-size: .6rem;
+    letter-spacing: .28em;
+  }
+
+  .archive-title h1 {
+    font-size: 3rem;
+    line-height: .9;
+  }
+
+  .archive-title span {
+    font-size: 1rem;
+    max-width: 320px;
+    margin: 0 auto;
   }
 
   .book-hotspots {
@@ -186,8 +204,64 @@ body {
     height: auto;
     display: grid;
     gap: 1rem;
-    padding: 2rem 1.2rem 6rem;
+    padding: 2rem 1.1rem 3rem;
   }
+
+  .hotspot {
+    position: relative;
+    top: auto;
+    left: auto !important;
+    width: 100%;
+    height: 118px;
+    border-radius: 6px;
+    border: 1px solid rgba(226, 182, 95, .72);
+    background:
+      radial-gradient(circle at 80% 25%, rgba(255, 210, 125, .13), transparent 28%),
+      linear-gradient(90deg, #160706, #3a120d 22%, #74351c 58%, #240b07);
+    box-shadow:
+      inset 16px 0 20px rgba(0,0,0,.55),
+      inset -10px 0 16px rgba(255,215,145,.05),
+      0 18px 38px rgba(0,0,0,.72);
+    overflow: hidden;
+  }
+
+  .hotspot::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    bottom: 12px;
+    left: 18px;
+    width: 7px;
+    background: linear-gradient(#d8b667, #6e431e, #d8b667);
+    opacity: .85;
+  }
+
+  .hotspot::after {
+    content: "";
+    position: absolute;
+    inset: 13px;
+    border: 1px solid rgba(235, 190, 105, .42);
+    pointer-events: none;
+  }
+
+  .hotspot span {
+    opacity: 1;
+    position: absolute;
+    left: 3.2rem;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .archive-footer {
+    position: relative;
+    bottom: auto;
+    padding: 0 1rem 2rem;
+  }
+}
 
   .hotspot {
     position: relative;
