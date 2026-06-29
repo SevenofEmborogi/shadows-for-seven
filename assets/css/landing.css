@@ -182,23 +182,28 @@ h1 {
 /* Floating embers and shadow fog */
 
 .hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle, rgba(255, 150, 60, 0.9) 0 2px, transparent 3px),
-    radial-gradient(circle, rgba(160, 80, 255, 0.85) 0 1.5px, transparent 3px),
-    radial-gradient(circle, rgba(255, 220, 150, 0.7) 0 1px, transparent 2px);
-  background-size:
-    220px 220px,
-    310px 310px,
-    170px 170px;
-  animation: emberDrift 18s linear infinite;
-  opacity: 0.55;
-}
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
 
+    background-image:
+        radial-gradient(circle, rgba(255,170,70,.95) 0 4px, transparent 6px),
+        radial-gradient(circle, rgba(165,95,255,.95) 0 3px, transparent 5px),
+        radial-gradient(circle, rgba(255,235,180,.85) 0 2px, transparent 4px);
+
+    background-size:
+        280px 280px,
+        340px 340px,
+        200px 200px;
+
+    animation: emberDrift 12s linear infinite;
+
+    opacity: .95;
+
+    filter: blur(.3px);
+}
 .hero::after {
   content: "";
   position: absolute;
@@ -226,19 +231,21 @@ h1 {
 }
 
 @keyframes emberDrift {
-  from {
-    background-position:
-      0 0,
-      80px 40px,
-      20px 120px;
-  }
 
-  to {
-    background-position:
-      260px -340px,
-      -180px -420px,
-      160px -260px;
-  }
+    from{
+        background-position:
+        0 100vh,
+        150px 110vh,
+        60px 105vh;
+    }
+
+    to{
+        background-position:
+        180px -200px,
+        -120px -260px,
+        120px -180px;
+    }
+
 }
 
 @keyframes fogCrawl {
