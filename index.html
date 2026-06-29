@@ -1,48 +1,45 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Shadows for Seven</title>
-
-<link rel="stylesheet" href="assets/css/landing.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadows for Seven</title>
+  <link rel="stylesheet" href="assets/css/landing.css">
 </head>
 
 <body>
 
 <section class="hero">
+  <div class="ash"></div>
+  <div class="fog"></div>
 
-<div class="overlay">
+  <div class="overlay">
+    <p class="archive">THE OFFICIAL WORLD ARCHIVE</p>
 
-<p class="archive">
-THE OFFICIAL WORLD ARCHIVE
-</p>
+    <h1>
+      SHADOWS<br>
+      FOR<br>
+      SEVEN
+    </h1>
 
-<h1>
-SHADOWS<br>
-FOR<br>
-SEVEN
-</h1>
+    <p class="quote">
+      "The world remembers only the victors.<br>
+      The shadows remember everything."
+    </p>
 
-<p class="quote">
-"The world remembers only the victors.<br>
-The shadows remember everything."
-</p>
-
-<a class="enter" href="archive.html">
-FOLLOW THE RAVENS
-</a>
-
-</div>
-
+    <a class="enter" href="archive.html">FOLLOW THE RAVENS</a>
+  </div>
 </section>
 
-</body>
+<script>
+  document.querySelector(".enter").addEventListener("click", function(e) {
+    e.preventDefault();
+    document.body.classList.add("fade-out");
+    setTimeout(() => {
+      window.location.href = this.href;
+    }, 700);
+  });
+</script>
 
+</body>
 </html>
