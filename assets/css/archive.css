@@ -6,11 +6,6 @@
   box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  min-height: 100%;
-}
-
 body {
   background: #050302;
   color: #efe6d2;
@@ -30,8 +25,8 @@ body {
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(to bottom, rgba(0,0,0,.18), rgba(0,0,0,.58)),
-    radial-gradient(circle at center, transparent 35%, rgba(0,0,0,.7) 100%);
+    linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.6)),
+    radial-gradient(circle at center, transparent 35%, rgba(0,0,0,.72) 100%);
 }
 
 .archive-dust {
@@ -40,11 +35,6 @@ body {
   z-index: 2;
   pointer-events: none;
   opacity: .22;
-  background-image:
-    radial-gradient(circle, rgba(255,220,160,.35) 1px, transparent 2px),
-    radial-gradient(circle, rgba(255,255,255,.14) 1px, transparent 2px);
-  background-size: 180px 180px, 260px 260px;
-  animation: dustFloat 24s linear infinite;
 }
 
 .archive-title {
@@ -80,7 +70,6 @@ body {
   text-shadow: 0 3px 12px #000;
 }
 
-/* CLICKABLE BOOKS IN THE BACKGROUND IMAGE */
 .book-hotspots {
   position: absolute;
   z-index: 10;
@@ -110,7 +99,6 @@ body {
   transform: translateY(-8px);
 }
 
-/* Four main archive books only */
 .book-1 { left: 13.5%; width: 11.5%; }
 .book-2 { left: 27.1%; width: 11.6%; }
 .book-3 { left: 40.6%; width: 11.7%; }
@@ -140,21 +128,14 @@ body {
   font-size: 1.15rem;
 }
 
-@keyframes dustFloat {
-  from { background-position: 0 0, 40px 80px; }
-  to { background-position: 140px -320px, -110px -380px; }
-}
-
-/* MOBILE */
 @media (max-width: 700px) {
   .archive-room {
     min-height: 100dvh;
-    overflow: hidden;
-    background: url("../images/archive-library.png") center center / cover no-repeat;
+    background-position: center top;
   }
 
   .archive-title {
-    padding: 2.2rem .8rem 0;
+    padding: 2rem .8rem 0;
   }
 
   .archive-title p {
@@ -182,413 +163,5 @@ body {
 
   .archive-footer {
     bottom: 1.5rem;
-  }
-}  opacity: .28;
-  background-image:
-    radial-gradient(circle, rgba(255,220,160,.35) 1px, transparent 2px),
-    radial-gradient(circle, rgba(255,255,255,.14) 1px, transparent 2px);
-  background-size: 180px 180px, 260px 260px;
-  animation: dustFloat 24s linear infinite;
-}
-
-.archive-heading,
-.archive-books,
-.archive-footer {
-  position: relative;
-  z-index: 2;
-}
-
-.archive-heading {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.archive-heading p {
-  font-family: "Cinzel", serif;
-  text-transform: uppercase;
-  letter-spacing: .48em;
-  color: #d2ad66;
-  font-size: .75rem;
-}
-
-.archive-heading h1 {
-  font-family: "Cinzel", serif;
-  text-transform: uppercase;
-  font-size: clamp(3rem, 7vw, 6.4rem);
-  line-height: .9;
-  margin: .85rem 0;
-  color: #f3ead8;
-  text-shadow: 0 4px 18px #000;
-}
-
-.archive-heading span {
-  display: block;
-  color: #e1cda9;
-  font-size: clamp(1.1rem, 2vw, 1.55rem);
-  font-style: italic;
-  text-shadow: 0 3px 12px #000;
-}
-
-.archive-books {
-  width: min(1100px, 100%);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
-  align-items: stretch;
-}
-
-.archive-book {
-  min-height: 310px;
-  padding: 1.4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  text-decoration: none;
-  color: #f5ead6;
-  position: relative;
-  overflow: hidden;
-  border-radius: 4px;
-  border: 1px solid rgba(230, 185, 95, .7);
-  background:
-    radial-gradient(circle at 70% 20%, rgba(255,215,140,.16), transparent 28%),
-    linear-gradient(90deg, #130504, #48140f 25%, #7c3a1e 58%, #220907);
-  box-shadow:
-    inset 18px 0 24px rgba(0,0,0,.6),
-    inset -12px 0 18px rgba(255,220,150,.06),
-    0 24px 55px rgba(0,0,0,.75);
-  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
-}
-
-.archive-book::before {
-  content: "";
-  position: absolute;
-  top: 14px;
-  bottom: 14px;
-  left: 18px;
-  width: 8px;
-  background: linear-gradient(#d8b667, #6e431e, #d8b667);
-  box-shadow:
-    22px 0 0 rgba(218,180,95,.16),
-    44px 0 0 rgba(218,180,95,.09);
-}
-
-.archive-book::after {
-  content: "";
-  position: absolute;
-  inset: 14px;
-  border: 1px solid rgba(235,190,105,.38);
-  pointer-events: none;
-}
-
-.archive-book:hover {
-  transform: translateY(-14px) rotate(-1deg);
-  border-color: rgba(245,205,125,.95);
-  box-shadow:
-    0 0 38px rgba(214,154,70,.35),
-    0 34px 70px rgba(0,0,0,.82),
-    inset 0 0 40px rgba(255,220,150,.08);
-}
-
-.archive-book strong,
-.archive-book small {
-  position: relative;
-  z-index: 2;
-  margin-left: 2.2rem;
-}
-
-.archive-book strong {
-  font-family: "Cinzel", serif;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  color: #f0cf7a;
-  font-size: 1.25rem;
-}
-
-.archive-book small {
-  margin-top: .7rem;
-  color: #ddcbb2;
-  font-size: 1rem;
-}
-
-.archive-footer {
-  margin-top: 2.6rem;
-  text-align: center;
-}
-
-.archive-footer a {
-  color: #d8b86d;
-  text-decoration: none;
-  font-family: "Cinzel", serif;
-  text-transform: uppercase;
-  letter-spacing: .12em;
-}
-
-.archive-footer p {
-  margin-top: .7rem;
-  color: #ccb89b;
-  font-style: italic;
-  font-size: 1.2rem;
-}
-
-@keyframes dustFloat {
-  from { background-position: 0 0, 40px 80px; }
-  to { background-position: 140px -320px, -110px -380px; }
-}
-
-@media (max-width: 850px) {
-  .archive-page {
-    min-height: 100vh;
-    overflow-y: auto;
-    padding: 2.3rem 1.1rem 2rem;
-    background:
-      linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.9)),
-      url("../images/archive-library.png") center top / cover no-repeat;
-  }
-
-  .archive-heading {
-    margin-bottom: 2rem;
-  }
-
-  .archive-heading p {
-    font-size: .6rem;
-    letter-spacing: .28em;
-  }
-
-  .archive-heading h1 {
-    font-size: 3rem;
-  }
-
-  .archive-heading span {
-    font-size: 1rem;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
-  .archive-books {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .archive-book {
-    min-height: 118px;
-  }
-
-  .archive-book strong {
-    font-size: 1.15rem;
-  }
-
-  .archive-footer {
-    margin-top: 2rem;
-  }
-}    linear-gradient(to bottom, rgba(0,0,0,.18), rgba(0,0,0,.58)),
-    radial-gradient(circle at center, transparent 35%, rgba(0,0,0,.7) 100%);
-}
-
-.archive-dust {
-  z-index: 2;
-  opacity: .25;
-  background-image:
-    radial-gradient(circle, rgba(255,220,160,.35) 1px, transparent 2px),
-    radial-gradient(circle, rgba(255,255,255,.14) 1px, transparent 2px);
-  background-size: 180px 180px, 260px 260px;
-  animation: dustFloat 24s linear infinite;
-}
-
-.archive-title {
-  position: relative;
-  z-index: 3;
-  text-align: center;
-  padding-top: 3rem;
-}
-
-.archive-title p {
-  font-family: "Cinzel", serif;
-  text-transform: uppercase;
-  letter-spacing: .5em;
-  color: #d2ad66;
-  font-size: .75rem;
-}
-
-.archive-title h1 {
-  font-family: "Cinzel", serif;
-  text-transform: uppercase;
-  font-size: clamp(3rem, 7vw, 6.6rem);
-  line-height: .9;
-  margin: .8rem 0;
-  color: #f3ead8;
-  text-shadow: 0 4px 18px #000;
-}
-
-.archive-title span {
-  display: block;
-  color: #e1cda9;
-  font-size: clamp(1.1rem, 2vw, 1.55rem);
-  font-style: italic;
-  text-shadow: 0 3px 12px #000;
-}
-
-/* DESKTOP CLICK ZONES OVER REAL BOOKS */
-.book-hotspots {
-  position: absolute;
-  z-index: 10;
-  left: 0;
-  right: 0;
-  bottom: 20%;
-  height: 29%;
- 
-}
-
-.hotspot {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  text-decoration: none;
-  border-radius: 8px;
-  background: transparent;
-  transition: .25s ease;
-}
-
-.hotspot span {
-  display: none;
-}
-
-.hotspot:hover {
-  background: rgba(255, 210, 120, .08);
-  box-shadow: 0 0 45px rgba(255, 185, 80, .25);
-  transform: translateY(-8px);
-}
-
-/* Individual desktop book hit boxes */
-.book-1 { left: 13.5%; width: 11.5%; }
-.book-2 { left: 27.1%; width: 11.6%; }
-.book-3 { left: 40.6%; width: 11.7%; }
-.book-4 { left: 54.0%; width: 11.6%; }
-.book-5 { left: 67.7%; width: 11.8%; }
-.book-6 { left: 81.2%; width: 11.8%; }
-
-.book-muffin {
-  display: none;
-}
-
-.archive-footer {
-  position: absolute;
-  z-index: 4;
-  left: 0;
-  right: 0;
-  bottom: 2.2rem;
-  text-align: center;
-}
-
-.archive-footer a {
-  color: #d8b86d;
-  text-decoration: none;
-  font-family: "Cinzel", serif;
-  text-transform: uppercase;
-  letter-spacing: .12em;
-}
-
-.archive-footer p {
-  margin-top: .6rem;
-  color: #ccb89b;
-  font-style: italic;
-  font-size: 1.15rem;
-}
-
-@keyframes dustFloat {
-  from { background-position: 0 0, 40px 80px; }
-  to { background-position: 140px -320px, -110px -380px; }
-}
-
-/* MOBILE VERSION */
-@media (max-width: 700px) {
-  .archive-room {
-    min-height: 100vh;
-    overflow-y: auto;
-    background:
-      linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.92)),
-      url("../images/archive-library.png") center top / cover no-repeat;
-  }
-
-  .archive-title {
-    padding: 2.2rem 1rem 1rem;
-  }
-
-  .archive-title p {
-    font-size: .6rem;
-    letter-spacing: .28em;
-  }
-
-  .archive-title h1 {
-    font-size: 3rem;
-  }
-
-  .archive-title span {
-    font-size: 1rem;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
-  .book-hotspots {
-    position: relative;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    height: auto;
-    display: grid;
-    gap: 1rem;
-    padding: 2rem 1.1rem 3rem;
-  }
-
-  .hotspot {
-    position: relative;
-    top: auto;
-    left: auto !important;
-    width: 100%;
-    height: 118px;
-    border-radius: 6px;
-    border: 1px solid rgba(226,182,95,.72);
-    background:
-      radial-gradient(circle at 80% 25%, rgba(255,210,125,.13), transparent 28%),
-      linear-gradient(90deg, #160706, #3a120d 22%, #74351c 58%, #240b07);
-    box-shadow:
-      inset 16px 0 20px rgba(0,0,0,.55),
-      0 18px 38px rgba(0,0,0,.72);
-  }
-
-  .hotspot::before {
-    content: "";
-    position: absolute;
-    top: 12px;
-    bottom: 12px;
-    left: 18px;
-    width: 7px;
-    background: linear-gradient(#d8b667, #6e431e, #d8b667);
-  }
-
-  .hotspot::after {
-    content: "";
-    position: absolute;
-    inset: 13px;
-    border: 1px solid rgba(235,190,105,.42);
-  }
-
-  .hotspot span {
-    display: block;
-    position: absolute;
-    left: 3.2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: "Cinzel", serif;
-    color: #f0d083;
-    text-transform: uppercase;
-    letter-spacing: .12em;
-    font-size: 1rem;
-  }
-
-  .archive-footer {
-    position: relative;
-    bottom: auto;
-    padding: 0 1rem 2rem;
   }
 }
