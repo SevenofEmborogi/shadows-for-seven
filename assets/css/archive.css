@@ -6,35 +6,184 @@
   box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  min-height: 100%;
+}
+
 body {
   background: #050302;
   color: #efe6d2;
   font-family: "Cormorant Garamond", serif;
 }
 
-.archive-page {
-  min-height: 100vh;
+.archive-room {
   position: relative;
-  overflow-x: hidden;
-  padding: 3.5rem 6vw 2.5rem;
-  background:
-    url("../images/archive-library.png") center center / cover no-repeat;
+  min-height: 100vh;
+  overflow: hidden;
+  background: url("../images/archive-library.png") center center / cover no-repeat;
 }
 
-.archive-overlay {
+.archive-darkness {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,.34), rgba(0,0,0,.78)),
-    radial-gradient(circle at center, transparent 32%, rgba(0,0,0,.78));
+  z-index: 1;
   pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.18), rgba(0,0,0,.58)),
+    radial-gradient(circle at center, transparent 35%, rgba(0,0,0,.7) 100%);
 }
 
 .archive-dust {
-  position: fixed;
+  position: absolute;
   inset: 0;
+  z-index: 2;
   pointer-events: none;
-  opacity: .28;
+  opacity: .22;
+  background-image:
+    radial-gradient(circle, rgba(255,220,160,.35) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,255,255,.14) 1px, transparent 2px);
+  background-size: 180px 180px, 260px 260px;
+  animation: dustFloat 24s linear infinite;
+}
+
+.archive-title {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.archive-title p {
+  font-family: "Cinzel", serif;
+  text-transform: uppercase;
+  letter-spacing: .5em;
+  color: #d2ad66;
+  font-size: .75rem;
+}
+
+.archive-title h1 {
+  font-family: "Cinzel", serif;
+  text-transform: uppercase;
+  font-size: clamp(3rem, 7vw, 6.6rem);
+  line-height: .9;
+  margin: .8rem 0;
+  color: #f3ead8;
+  text-shadow: 0 4px 18px #000;
+}
+
+.archive-title span {
+  display: block;
+  color: #e1cda9;
+  font-size: clamp(1.1rem, 2vw, 1.55rem);
+  font-style: italic;
+  text-shadow: 0 3px 12px #000;
+}
+
+/* CLICKABLE BOOKS IN THE BACKGROUND IMAGE */
+.book-hotspots {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  bottom: 18%;
+  height: 31%;
+}
+
+.hotspot {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  text-decoration: none;
+  border-radius: 8px;
+  background: transparent;
+  transition: .25s ease;
+}
+
+.hotspot span {
+  display: none;
+}
+
+.hotspot:hover {
+  background: rgba(255, 210, 120, .08);
+  box-shadow: 0 0 45px rgba(255, 185, 80, .25);
+  transform: translateY(-8px);
+}
+
+/* Four main archive books only */
+.book-1 { left: 13.5%; width: 11.5%; }
+.book-2 { left: 27.1%; width: 11.6%; }
+.book-3 { left: 40.6%; width: 11.7%; }
+.book-4 { left: 81.2%; width: 11.8%; }
+
+.archive-footer {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  right: 0;
+  bottom: 2.2rem;
+  text-align: center;
+}
+
+.archive-footer a {
+  color: #d8b86d;
+  text-decoration: none;
+  font-family: "Cinzel", serif;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.archive-footer p {
+  margin-top: .6rem;
+  color: #ccb89b;
+  font-style: italic;
+  font-size: 1.15rem;
+}
+
+@keyframes dustFloat {
+  from { background-position: 0 0, 40px 80px; }
+  to { background-position: 140px -320px, -110px -380px; }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .archive-room {
+    min-height: 100dvh;
+    overflow: hidden;
+    background: url("../images/archive-library.png") center center / cover no-repeat;
+  }
+
+  .archive-title {
+    padding: 2.2rem .8rem 0;
+  }
+
+  .archive-title p {
+    font-size: .55rem;
+    letter-spacing: .26em;
+  }
+
+  .archive-title h1 {
+    font-size: 2.65rem;
+  }
+
+  .archive-title span {
+    font-size: .95rem;
+  }
+
+  .book-hotspots {
+    bottom: 22%;
+    height: 38%;
+  }
+
+  .book-1 { left: 0%; width: 25%; }
+  .book-2 { left: 25%; width: 25%; }
+  .book-3 { left: 50%; width: 25%; }
+  .book-4 { left: 75%; width: 25%; }
+
+  .archive-footer {
+    bottom: 1.5rem;
+  }
+}  opacity: .28;
   background-image:
     radial-gradient(circle, rgba(255,220,160,.35) 1px, transparent 2px),
     radial-gradient(circle, rgba(255,255,255,.14) 1px, transparent 2px);
